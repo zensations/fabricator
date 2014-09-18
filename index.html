@@ -5,45 +5,114 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<title>Fabricator</title>
+	<title>Fabricator | Build your own UI toolkit</title>
 
 	<meta name="og:title" content="Fabricator" />
-	<meta name="og:description" content="A tool for creating modular websites." />
+	<meta name="og:description" content="Build your own UI toolkit" />
 	<meta name="og:image" content="fb.jpg" />
 
-	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css' />
-	<link rel="stylesheet" href="toolkit/toolkit/css/toolkit.css" />
+	<link href="http://fonts.googleapis.com/css?family=Titillium+Web:300,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="toolkit/toolkit/styles/toolkit.css" />
 
 </head>
 <body>
 
-	<a href="https://github.com/resource/fabricator"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+<svg style="display: none;">
+    <symbol id="symbol-mask" viewbox="0 0 212.2 265.2">
+        <path d="M194.1 108.9l-85.5 8.2v43.699l84.6-12 .9-39.899zm-4.4 36.6l-77.6 10.6v-35.2l78.5-7.8-.9 32.4zM159.6 78.4l-35.1 2.3v16.7l35.1-2.9zM23.482 83.336l-6.2.3c-.201.01-.356.18-.346.381.009.195.17.347.363.347h.018l6.2-.3c.201-.01.356-.18.346-.381s-.201-.359-.381-.347zM24.564 80.482c-.01-.202-.197-.361-.382-.346l-8 .4c-.201.01-.356.181-.346.382.01.195.17.346.363.346h.019l8-.4c.201-.01.356-.181.346-.382zM23.482 86.736l-6.2.3c-.201.01-.356.18-.346.381.009.195.17.347.363.347h.018l6.2-.3c.201-.01.356-.18.346-.381s-.201-.357-.381-.347zM23.482 90.136l-6.2.3c-.201.01-.356.18-.346.381.009.195.17.347.363.347h.018l6.2-.3c.201-.01.356-.18.346-.381s-.201-.37-.381-.347zM16.736 77.817c.009.195.17.347.363.347h.018l6.2-.3c.201-.01.356-.18.346-.381s-.201-.365-.381-.346l-6.2.3c-.201.009-.355.179-.346.38zM16.2 75.064h.018l6.2-.3c.201-.01.356-.18.346-.381-.009-.202-.205-.36-.381-.346l-6.2.3c-.201.01-.356.18-.346.381.009.195.17.346.363.346zM199.85 98.8v-5.9c0-.528-.164-1.044-.471-1.475l-3.398-4.793.07-1.832v-9.05c.461-12.042-4.768-26.034-15.542-41.59-7.932-11.451-15.882-19.345-16.217-19.675-.106-.105-.222-.2-.344-.285-.228-.156-5.666-3.833-15.072-3.833-.84 0-1.697.03-2.575.09-9.699.76-34.735 1.441-36.565 1.49-.398-.021-1.779-.084-3.888-.084-7.301 0-25.846.816-40.328 8.376-18.319 9.562-41.133 31.597-42.096 32.53l-.125.131c-4.939 5.524-6.548 13.146-7.042 16.561l-4.199.4c-1.38.132-2.403 1.341-2.302 2.724l1.5 20.6c.097 1.333 1.207 2.365 2.543 2.365h4.972c.869 5.232 3.574 21.51 6.313 37.822 4.938 29.403 6.282 37.409 6.967 39.907l-.055.011c3.735 19.025 11.834 30.051 14.496 33.674.279.38.491.659.609.844 2.209 4.568 34.344 31.541 39.189 34.515l-.001.003c12.401 8.223 25.74 12.392 39.643 12.392 15.769 0 29.45-5.784 33.178-8.851l.026.039c34.952-23.872 34.397-60.747 34.313-63.317l.741-28.376 1.977-.289c1.221-.179 2.139-1.206 2.179-2.439l1.5-45.7-.003-.233c.042-.702-.209-1.408-.722-1.933l-2.215-2.268h.391c1.411-.001 2.553-1.143 2.553-2.551zm-106.96 56.069c-.85.142-1.628.331-2.326.566v-51.19l2.074.734.252 49.89zm-1.348-51.051c.757-.326 1.244-.814 1.558-1.299.385-.595.594-1.396.567-1.838.161-2.058-1.249-3.815-1.618-4.238l-.287-2.578 12.673 8.825v5.694l-12.893-4.566zm13.622-.991l6.572-.72v5.667l-6.572.72v-5.667zm-.266-.803l-11.965-8.331c2.44.313 4.598.475 6.421.475 4.095 0 5.699-.805 6.318-1.357l5.784 8.585-6.558.628zm7.652-.308l-.086-.127v-.29l-.184.018-.947-1.406c4.981.396 9.878.568 14.591.568 24.17 0 43.424-4.37 43.637-4.42l7.1-1.2-.005-.029 2.841.92c-5.921.651-30.012 7.896-66.947 5.966zm66.359-16.064l10.827 7.607v5.042l-13.196-4.275c-.095-1.075-.383-5.608 1.214-7.584.327-.404.71-.66 1.155-.79zm17.727 7.712v5.171h-5.872v-5.171h5.872zm-.346-.728h-5.774l-9.813-6.896c4.094.177 8.638-.93 9.75-1.222l5.837 8.118zm-184.261-19.744c.554.441 1.547 4.018 2.007 9.766.471 5.885.029 9.622-.426 9.993l-.155-.172-1.426-19.587zm2.308 19.844c1.038-2.274.455-9.766.425-10.136-.029-.36-.62-7.543-1.969-9.8l9.826-.819c.559.836 3.013 4.808 3.62 10.889.098 1.559.355 5.667-2.241 9.866h-9.661zm174.014 89.963c.014.361.971 36.415-32.09 58.994-.152.104-.292.225-.417.356-1.27.797-12.714 7.567-29.91 7.567-12.884 0-25.273-3.884-36.825-11.543-.131-.087-.187-.123-.333-.185-1.145-.613-8.905-6.764-18.942-15.385-13.084-11.238-17.546-15.905-18.121-16.881-.192-.43-.495-.843-1.109-1.679-2.495-3.396-10.086-13.73-13.602-31.637l-.09-.336c-.73-3.092-8.305-48.29-13.317-78.508h.805l.107-.168c2.836-4.458 2.562-8.827 2.455-10.532-.702-7.019-3.74-11.205-3.87-11.38l-.121-.164-1.809.151c.13-1.342 1.112-9.613 5.878-15.003 1.378-1.326 23.649-22.634 40.839-31.607 13.481-7.037 31.043-7.797 37.968-7.797 2.303 0 3.685.081 3.698.082l.221.003c1.089-.028 26.782-.711 36.908-1.505.737-.051 1.478-.076 2.201-.076 6.895 0 11.164 2.324 12.018 2.833 2.593 2.627 31.059 32.094 30.058 57.298l-.002.101.002 8.264-.204-.284-.245.068c-.064.018-6.267 1.723-10.979 1.164l-.126-.088-.134.013-.13.026-.176-.022-.025.062c-.683.142-1.272.496-1.746 1.082-1.904 2.357-1.431 7.579-1.358 8.276l-6.41 1.084c-.276.063-27.947 6.346-58.602 3.798l-4.814-7.146-.401-.623-.239.69c-.006.014-.7 1.375-6.008 1.375-2.135 0-4.743-.226-7.74-.665l-.766-.533.502 4.52.084.089c.016.017 1.557 1.667 1.515 3.581l-.015.269h.007c-.005.177-.075 1.266-.986 2.021-1.018.844-2.69.988-4.969.424l-.175.708c1.213.298 2.201.382 3.023.332v51.317h.551c-7.31 2.595-5.998 9.841 2.566 8.471.02.094.065.181.148.234.06.039.129.059.198.059l.146-.03 3.607-1.584 8.346 1.649-.002-.209.066.087c.066.057.15.087.237.087l.05-.003 83.378-11.513-.778 29.785.004.166zm6.795-31.518l-89.089 12.302-.873-47.478-9.466-9.275 1.069 55.24-3.126 1.373-.293-58.106 2.925 1.037 9.117 8.932 91.212-9.002-1.476 44.977z">
+    </symbol>
+    <symbol id="symbol-wordmark" viewbox="0 0 300.9 80">
+        <path d="M14 11.25v25.4h9.301c1 0 1.698.7 1.698 1.7v3.4c0 .9-.698 1.7-1.698 1.7h-9.301v30.4c0 1-.698 1.699-1.698 1.699h-3.4c-1.002.001-1.702-.698-1.702-1.698v-66c0-1.8 1.602-3.4 3.4-3.4h12.7c1 0 1.698.9 1.698 1.7v3.4c0 1-.698 1.7-1.698 1.7h-9.3zM58.6 16.85v57c0 1-.7 1.699-1.7 1.699h-3.4c-1 0-1.698-.699-1.698-1.699v-30.5h-11v30.5c0 1-.7 1.699-1.7 1.699h-3.4c-.898 0-1.7-.699-1.7-1.699v-57c0-6.8 5.602-12.4 12.4-12.4 6.598 0 12.198 5.6 12.198 12.4zm-6.9 0c0-3.1-2.5-5.6-5.5-5.6-3.1 0-5.6 2.5-5.6 5.6v19.7h11v-19.7h.1zM92.2 31.05c0 3.5-1.5 6.7-3.898 9 2.398 2.2 3.898 5.4 3.898 8.9v14.3c0 6.7-5.6 12.3-12.3 12.3h-9c-1.8 0-3.4-1.5-3.4-3.398v-64.302c0-1.8 1.602-3.4 3.4-3.4h9c6.7 0 12.3 5.6 12.3 12.4v14.2zm-6.899-14.2c0-3.1-2.5-5.6-5.5-5.6h-5.601v25.4h5.601c3 0 5.5-2.5 5.5-5.6v-14.2zm-5.401 26.7h-5.6v25.301h5.6c3 0 5.5-2.5 5.5-5.5v-14.4c-.099-3.001-2.5-5.401-5.5-5.401zM125.1 31.05c0 3.5-1.4 6.6-3.7 8.9 2.4 2.2 3.7 5.5 3.7 9v24.9c0 1-.7 1.699-1.7 1.699h-3.4c-1 0-1.698-.699-1.698-1.699v-24.9c0-3.1-2.5-5.6-5.5-5.6h-5.5v30.5c0 1-.9 1.699-1.7 1.699h-3.402c-1 0-1.7-.699-1.7-1.699v-66c0-1.8 1.5-3.4 3.4-3.4h8.9c6.8 0 12.3 5.6 12.3 12.4v14.2zm-6.799-14.2c0-3.1-2.5-5.6-5.5-5.6h-5.5v25.3h5.5c3 0 5.5-2.5 5.5-5.5v-14.2zM140.9 73.851c0 1-.7 1.699-1.7 1.699h-3.399c-1 0-1.7-.699-1.7-1.699v-67.701c0-.9.7-1.7 1.7-1.7h3.399c1 0 1.7.9 1.7 1.7v67.701zM167.5 20.35v-3.6c0-3-2.5-5.5-5.5-5.5s-5.5 2.5-5.5 5.5v46.5c0 3 2.5 5.5 5.5 5.5s5.5-2.5 5.5-5.5v-4c0-1 .7-1.7 1.7-1.7h3.4c1 0 1.7.7 1.7 1.7v4c0 6.7-5.602 12.3-12.302 12.3-6.8 0-12.3-5.6-12.3-12.3v-46.5c0-6.7 5.5-12.3 12.3-12.3 6.7 0 12.302 5.6 12.302 12.3v3.6c0 1-.7 1.7-1.7 1.7h-3.4c-.899.1-1.7-.7-1.7-1.7zM206.9 16.85v57c0 1-.7 1.699-1.7 1.699h-3.399c-1 0-1.7-.699-1.7-1.699v-30.5h-11v30.5c0 1-.8 1.699-1.7 1.699h-3.401c-.898 0-1.698-.699-1.698-1.699v-57c0-6.8 5.6-12.4 12.398-12.4 6.601 0 12.2 5.6 12.2 12.4zm-6.9 0c0-3.1-2.5-5.6-5.5-5.6-3.1 0-5.6 2.5-5.6 5.6v19.7h11v-19.7h.1zM231.4 6.15v3.4c0 1-.8 1.7-1.7 1.7h-4.8v62.601c0 1-.7 1.699-1.7 1.699h-3.399c-1 0-1.7-.699-1.7-1.699v-62.601h-4.9c-1 0-1.7-.7-1.7-1.7v-3.4c0-.9.802-1.7 1.7-1.7h16.5c.899 0 1.699.9 1.699 1.7zM260.7 16.85v46.4c0 6.8-5.6 12.3-12.3 12.3-6.8 0-12.4-5.5-12.4-12.3v-46.4c0-6.8 5.602-12.4 12.4-12.4s12.3 5.6 12.3 12.4zm-6.8 0c0-3.1-2.5-5.6-5.5-5.6-3.1 0-5.6 2.5-5.6 5.6v46.4c0 3 2.5 5.5 5.6 5.5 3 0 5.5-2.5 5.5-5.5v-46.4zM293.7 31.05c0 3.5-1.398 6.6-3.7 8.9 2.4 2.2 3.7 5.5 3.7 9v24.9c0 1-.7 1.699-1.7 1.699h-3.4c-1 0-1.7-.699-1.7-1.699v-24.9c0-3.1-2.5-5.6-5.5-5.6h-5.5v30.5c0 1-.9 1.699-1.7 1.699h-3.399c-1 0-1.7-.699-1.7-1.699v-66c0-1.8 1.5-3.4 3.398-3.4h8.9c6.8 0 12.3 5.6 12.3 12.4l.001 14.2zm-6.899-14.2c0-3.1-2.5-5.6-5.5-5.6h-5.5v25.3h5.5c3 0 5.5-2.5 5.5-5.5v-14.2z">
+    </symbol>
+</svg>
 
-	<div class="jumbotron centered-text padding-left padding-right">
-		<img src="toolkit/toolkit/img/mask.svg" class="logo--mask" alt="Fabricator Mask">
-		<img src="toolkit/toolkit/img/wordmark.svg" class="logo--mark" alt="Fabricator wordmark">
-	</div>
+<div class="main">
 
-	<div class="container">
+    <div class="row">
 
-		<div class="row centered-text padding-top--large padding-bottom--large">
-			<a href="https://github.com/resource/fabricator/archive/master.zip" class="button">Download &#8623;</a>
-			<ul class="birdseed margin-top--large">
-				<li>
-					<a href="https://github.com/resource/fabricator/wiki/Quick-Start">Getting started</a>
-				</li>
-				<li class="pipe">|</li>
-				<li>
-					<a href="https://github.com/resource/fabricator/wiki">Docs</a>
-				</li>
-				<li class="pipe">|</li>
-				<li>
-					<a href="http://resource.github.io/fabricator/toolkit/index.html">This site's toolkit</a>
-				</li>
-			</ul>
-		</div>
+        <div class="grid--small-12">
+            <header>
+                <div class="hero slanted-block">
+                    <div class="slanted-block__content">
+                        <svg class="hero__mask">
+                            <use xlink:href="#symbol-mask">
+                        </svg>
+                        <svg class="hero__wordmark">
+                            <use xlink:href="#symbol-wordmark">
+                        </svg>
+                        <p class="larger">Build your own <span class="group">UI toolkit</span>
+                        </p>
+                    </div>
+                </div>
+            </header>
+            <div class="link-bar padding-top--large padding-bottom padding-left padding-right">
+                <a href="https://github.com/resource/fabricator/archive/master.zip" class="button">Download &#x21AF;</a>
+                <div class="group">
+                    <a href="#quick-start">Quick Start</a>
+                    <a href="https://github.com/resource/fabricator/wiki">Documentation</a>
+                    <a href="https://github.com/resource/fabricator">Source</a>
+                </div>
+            </div>
+            <div class="slanted-block slanted-block--light">
+                <div class="slanted-block__content row">
+                    <div class="row">
+                        <div class="feature grid--small-12 grid--medium-6">
+                            <h3>Documentation &amp; Style Guide</h3>
+                            <p>Markdown parsing and a loose structure for simple and flexible documentation. Easy to copy code snippets for rapid development.</p>
+                        </div>
+                        <div class="feature grid--small-12 grid--medium-6">
+                            <h3>Live Preview Server</h3>
+                            <p>Highly-portable local development environment with <a href="http://browsersync.io/" target="_blank">BrowserSync</a> built-in for a faster workflow.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="feature grid--small-12 grid--medium-6">
+                            <h3>Optimized Builds</h3>
+                            <p>Uses <a href="http://gulpjs.com" target="_blank">gulp.js</a> for a super-fast, highly-optimized build system.</p>
+                        </div>
+                        <div class="feature grid--small-12 grid--medium-6">
+                            <h3>Discreet Hierarchy</h3>
+                            <p>Gives you a dead-simple way of organizing your user interface by breaking things down to two levels: components and structures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	</div>
+        <div class="grid--small-12">
+            <div class="quick-start measure padding-left padding-right padding-bottom padding-top">
+                <h2 id="quick-start">Quick Start</h2>
+                <div class="quick-start__step">
+                    <h3>0. Install Node.js</h3>
+                    <p>Fabricator is built on Node.js, a platform for building fast, scalable network applications. There are pre-built <a href="http://nodejs.org/download/" target="_blank">installers for each platform</a>.</p>
+                </div>
+                <div class="quick-start__step">
+                    <h3>1. Download Fabricator</h3>
+                    <p>Each toolkit starts with a new, unique instance of Fabricator. You can grab the latest from <a href="https://github.com/resource/fabricator/archive/master.zip" target="_blank">master</a>, or choose from any <a href="https://github.com/resource/fabricator/releases" target="_blank">release version</a>.</p>
+                    <p>Alternatively, you can use the <a href="http://yeoman.io">Yeoman</a> generator to scaffold a new project for you:</p>
+                    <code class="code" data-symbol="$">npm install -g generator-fabricator</code>
+                    <code class="code margin-bottom" data-symbol="$">yo fabricator</code>
+                </div>
+                <div class="quick-start__step">
+                    <h3>3. Start Building</h3>
+                    <p>Once your instance is setup, you're ready to start building your . Start the development environment by running:</p>
+                    <code class="code margin-bottom" data-symbol="$">npm run dev</code>
+                    <p>This is install any dependencies and will fire-up a <a href="http://browsersync.io" target="_blank">BrowserSync</a> server.</p>
+                </div>
+            </div>
+            <div class="measure padding-top padding-bottom">
+                <hr>
+                <p><a href="toolkit/">View this site's toolkit</a> as an example. It contains all of the components and structures needed to build this site.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer row padding-top padding-bottom padding-left padding-right">
+        <p class="smaller">Fabricator is an open-source project from <a href="http://www.resource.com/" target="_blank">Resource/Ammirati</a> - the world's largest independent digital marketing agency.</p>
+        <p class="smaller">The project is available for use under the <a href="https://github.com/resource/fabricator/blob/master/LICENSE.md" target="_blank">MIT License</a>.</p>
+    </footer>
+</div>
 
 </body>
 </html>

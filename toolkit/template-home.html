@@ -7,9 +7,7 @@
 
 	<title>Toolkit</title>
 
-	<!-- fabricator styles -->
-	<link rel="stylesheet" href="fabricator/styles/f.css">
-	<!-- /fabricator styles -->
+	
 
 	<!-- toolkit styles -->
 	<link href="http://fonts.googleapis.com/css?family=Titillium+Web:300,700" rel="stylesheet" type="text/css">
@@ -19,22 +17,7 @@
 </head>
 <body>
 
-<!-- fabricator icons -->
-<svg style="display: none;">
-	<symbol id="f-icon-code" viewBox="0 0 34 32">
-		<path d="M.804 17.143q0-.232.179-.411l8.321-8.321q.179-.179.411-.179t.411.179l.893.893q.179.179.179.411t-.179.411l-7.018 7.018 7.018 7.018q.179.179.179.411t-.179.411l-.893.893q-.179.179-.411.179t-.411-.179l-8.321-8.321q-.179-.179-.179-.411zm11.91 11.214l6.661-23.054q.071-.232.277-.348t.42-.045l1.107.304q.232.071.348.277t.045.438l-6.661 23.054q-.071.232-.277.348t-.42.045l-1.107-.304q-.232-.071-.348-.277t-.045-.438zm10.375-3.786q0-.232.179-.411l7.018-7.018-7.018-7.018q-.179-.179-.179-.411t.179-.411l.893-.893q.179-.179.411-.179t.411.179l8.321 8.321q.179.179.179.411t-.179.411l-8.321 8.321q-.179.179-.411.179t-.411-.179l-.893-.893q-.179-.179-.179-.411z"/>
-	</symbol>
-	<symbol id="f-icon-notes" viewBox="0 0 32 32">
-		<path d="M26.667 1.333h-22.667c-2.205 0-4 1.795-4 4v16c0 2.205 2.667 2.667 4 2.667v8l12-8h10.667c2.205 0 4-1.795 4-4v-14.667c0-2.205-1.795-4-4-4zm1.333 18.667c0 .735-.599 1.333-1.333 1.333h-12l-8 6.667v-6.667h-2.667c-.735 0-1.333-.599-1.333-1.333v-14.667c0-.735.599-1.333 1.333-1.333h22.667c.735 0 1.333.599 1.333 1.333v14.667z"/>
-	</symbol>
-	<symbol id="f-icon-details" viewBox="0 0 25 32">
-		<path d="M0 16.571v-3.429q0-.714.5-1.214t1.214-.5h3.429q.714 0 1.214.5t.5 1.214v3.429q0 .714-.5 1.214t-1.214.5h-3.429q-.714 0-1.214-.5t-.5-1.214zm9.143 0v-3.429q0-.714.5-1.214t1.214-.5h3.429q.714 0 1.214.5t.5 1.214v3.429q0 .714-.5 1.214t-1.214.5h-3.429q-.714 0-1.214-.5t-.5-1.214zm9.143 0v-3.429q0-.714.5-1.214t1.214-.5h3.429q.714 0 1.214.5t.5 1.214v3.429q0 .714-.5 1.214t-1.214.5h-3.429q-.714 0-1.214-.5t-.5-1.214z"/>
-	</symbol>
-	<symbol id="f-icon-menu" viewBox="0 0 32 32">
-		<path d="M0 0h32v2h-32zM0 6h32v2h-32zM0 12h32v2h-32zM0 18h32v2h-32zM0 24h32v2h-32z"/>
-	</symbol>
-</svg>
-<!-- /fabricator icons -->
+
 
 <svg style="display: none;">
     <symbol id="symbol-mask" viewbox="0 0 212.2 265.2">
@@ -45,122 +28,87 @@
     </symbol>
 </svg>
 
-<nav class="f-menu" role="navigation">
+<!-- Start Home template -->
 
-	<div class="f-controls">
-		<div class="f-icon" data-toggle-control="details" title="toggle details">
-			<svg>
-				<use xlink:href="#f-icon-details" />
-			</svg>
-		</div>
-		<div class="f-icon" data-toggle-control="notes" title="toggle notes">
-			<svg>
-				<use xlink:href="#f-icon-notes" />
-			</svg>
-		</div>
-		<div class="f-icon" data-toggle-control="code" title="toggle code">
-			<svg>
-				<use xlink:href="#f-icon-code" />
-			</svg>
-		</div>
-	</div>
+<div class="main">
 
-	<ul>
-		<li>
-			<a href="index.html" class="f-menu__heading">Overview</a>
-		</li>
-		<li>
-			<a href="components.html" class="f-menu__heading">Components</a>
-			<ul>
-					<li>
-						<a href="components.html#button">Button</a>
-					</li>
-					<li>
-						<a href="components.html#code">Code</a>
-					</li>
-					<li>
-						<a href="components.html#feature">Feature</a>
-					</li>
-					<li>
-						<a href="components.html#headings">Headings</a>
-					</li>
-					<li>
-						<a href="components.html#list-ordered">List Ordered</a>
-					</li>
-					<li>
-						<a href="components.html#list-unordered">List Unordered</a>
-					</li>
-					<li>
-						<a href="components.html#paragraph">Paragraph</a>
-					</li>
-					<li>
-						<a href="components.html#slanted-block">Slanted Block</a>
-					</li>
-					<li>
-						<a href="components.html#symbols">Symbols</a>
-					</li>
-			</ul>
-		</li>
-		<li>
-			<a href="structures.html" class="f-menu__heading">Structures</a>
-			<ul>
-					<li>
-						<a href="structures.html#hero">Hero</a>
-					</li>
-					<li>
-						<a href="structures.html#link-bar">Link Bar</a>
-					</li>
-			</ul>
-		</li>
-		<li>
-			<a href="templates.html" class="f-menu__heading">Templates</a>
-			<ul>
-					<li>
-						<a href="template-home.html" target="_blank">Home</a>
-					</li>
-					<li>
-						<a href="template-typography.html" target="_blank">Typography</a>
-					</li>
-			</ul>
-		</li>
-		<li>
-			<a href="documentation.html" class="f-menu__heading">Documentation</a>
-			<ul>
-					<li>
-						<a href="documentation.html#technology-overview">Technology Overview</a>
-					</li>
-			</ul>
-		</li>
-	</ul>
-</nav>
+    <div class="row">
 
-<div class="f-container">
-	<div class="f-main">
+        <div class="grid--small-12">
+            <header>
+                <div class="hero slanted-block">
+                    <div class="slanted-block__content">
+                        <svg class="hero__mask">
+                            <use xlink:href="#symbol-mask">
+                        </svg>
+                        <svg class="hero__wordmark">
+                            <use xlink:href="#symbol-wordmark">
+                        </svg>
+                        <p class="larger">Build your own <span class="group">UI toolkit</span>
+                        </p>
+                    </div>
+                </div>
+            </header>
+            <div class="link-bar padding-top--large padding-bottom padding-left padding-right">
+                <a href="#" class="button">Download &#x21AF;</a>
+                <div class="group">
+                    <a href="#">Quick Start</a>
+                    <a href="#">Documentation</a>
+                </div>
+            </div>
+            <div class="slanted-block slanted-block--light">
+                <div class="slanted-block__content row">
+                    <div class="feature grid--small-12 grid--medium-6">
+                        <h3>Feature Name</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, sequi.</p>
+                    </div>
+                    <div class="feature grid--small-12 grid--medium-6">
+                        <h3>Feature Name</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, sequi.</p>
+                    </div>
+                    <div class="feature grid--small-12 grid--medium-6">
+                        <h3>Feature Name</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, sequi.</p>
+                    </div>
+                    <div class="feature grid--small-12 grid--medium-6">
+                        <h3>Feature Name</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, sequi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<div class="f-menu-bar">
-			<div class="f-menu-toggle">
-				<svg>
-					<use xlink:href="#f-icon-menu" />
-				</svg>
-			</div>
-		</div>
+        <div class="grid--small-12">
+            <div class="quick-start measure padding-left padding-right padding-bottom">
+                <h2>Quick Start</h2>
+                <div class="quick-start__step">
+                    <h3>0. Install Node.js</h3>
+                    <p>Fabricator is built on Node.js, a platform for building fast, scalable network applications. There are pre-built <a href="http://nodejs.org/download/" target="_blank">installers for each platform</a>.</p>
+                </div>
+                <div class="quick-start__step">
+                    <h3>1. Download Fabricator</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, amet consectetur excepturi facilis ex ut numquam ullam porro consequatur maiores repudiandae soluta iure quasi, quisquam quam, veniam sed esse officiis!</p>
+                </div>
+                <div class="quick-start__step">
+                    <h3>3. Start Building</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, amet consectetur excepturi facilis ex ut numquam ullam porro consequatur maiores repudiandae soluta iure quasi, quisquam quam, veniam sed esse officiis!</p>
+                    <code class="code" data-symbol="$">npm run dev</code>
+                </div>
+            </div>
+        </div>
 
-		<h1>Documentation</h1>
+    </div>
 
-			<div class="f-item-group">
-				<h2 id="technology-overview"><a href="#technology-overview">Technology Overview</a></h2>
-				<p>This is a markdown document.</p>
-<pre><code class="language-javascript">var foo = &quot;bar&quot;</code></pre>
-
-			</div>
-
-	</div>
+    <footer class="footer row padding-top padding-bottom padding-left padding-right">
+        <p class="smaller">Fabricator is an open-source project from <a href="http://www.resource.com/" target="_blank">Resource/Ammirati</a> - the world's largest independent digital marketing agency.</p>
+        <p class="smaller">The project is available for use under the <a href="https://github.com/resource/fabricator/blob/master/LICENSE.md" target="_blank">MIT License</a>.</p>
+    </footer>
 </div>
 
+<!-- /End Home template -->
 
-	<!-- fabricator scripts -->
-	<script src="fabricator/scripts/f.js"></script>
-	<!-- /fabricator scripts -->
+
+	
 
 	<!-- toolkit scripts -->
 	<script src="toolkit/scripts/toolkit.js"></script>
