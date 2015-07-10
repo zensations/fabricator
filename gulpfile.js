@@ -27,7 +27,7 @@ var config = {
 		},
 		styles: {
 			fabricator: 'src/assets/fabricator/styles/fabricator.scss',
-			toolkit: 'src/assets/toolkit/styles/toolkit.scss'
+			toolkit: 'src/assets/toolkit/styles/toolkit_styles.scss'
 		},
 		images: 'src/assets/toolkit/images/**/*',
 		views: 'src/toolkit/views/*.html'
@@ -63,6 +63,7 @@ gulp.task('styles:toolkit', function () {
 		.pipe(sass().on('error', sass.logError))
 		.pipe(prefix('last 1 version'))
 		.pipe(gulpif(!config.dev, csso()))
+		.pipe(rename('toolkit.css'))
 		.pipe(gulp.dest(config.dest + '/assets/toolkit/styles'))
 		.pipe(gulpif(config.dev, reload({stream:true})));
 });

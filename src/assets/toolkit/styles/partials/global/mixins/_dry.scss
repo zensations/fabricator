@@ -1,0 +1,12 @@
+@mixin static($mixin-name, $extend: true) {
+  @if $extend == true {
+    @include dynamic-extend($mixin-name) {
+      @include static($mixin-name, false) {
+        @content;
+      }
+    ;
+    }
+  } @else {
+    @content;
+  }
+}

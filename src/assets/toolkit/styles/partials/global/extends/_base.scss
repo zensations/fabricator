@@ -1,0 +1,18 @@
+// todo: maybe we should move that to base?
+%base--block {
+  margin-bottom: .75rem;
+}
+
+%base--list {
+  @extend %base--block;
+  margin-left: 0;
+  padding-left: 0;
+
+  dl, ul, ol {
+    padding-left: 1.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+}

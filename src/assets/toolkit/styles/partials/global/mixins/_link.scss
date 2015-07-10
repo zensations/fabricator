@@ -1,0 +1,16 @@
+@mixin link($extend: true) {
+  @include static('link', $extend) {
+    color: black;
+    text-decoration: none;
+    outline: none;
+    transition-property: border-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-out;
+    transition-delay: initial;
+    border-bottom: 0.0625rem solid black;
+
+    &:hover, &:focus, &:active {
+      border-color: #444;
+    }
+  }
+}
