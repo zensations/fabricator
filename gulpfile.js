@@ -62,7 +62,7 @@ gulp.task('styles:fabricator', function () {
 		.pipe(gulpif(config.dev, reload({stream:true})));
 });
 
-gulp.task('styles:toolkit', ['icons'], function () {
+gulp.task('styles:toolkit', function () {
 	gulp.src(config.src.styles.toolkit)
 		.pipe(sass().on('error', sass.logError))
 		.pipe(prefix('last 1 version'))
@@ -192,7 +192,6 @@ gulp.task('default', ['clean'], function () {
 
 	// define build tasks
 	var tasks = [
-		'icons',
 		'styles',
 		'scripts',
 		'images',

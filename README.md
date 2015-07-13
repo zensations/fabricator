@@ -6,6 +6,10 @@ Difference to the original fabricator:
 - Added a base component under materials and corresponding .scss for base tags h1, p, etc.
 - Added DRY SCSS mixins based on https://github.com/Snugug/toolkit
 
+### Generate icon fonts
+The icons have to be generated manually by running "gulp icons". We removed it from building every time as
+it is usesed not that often and costs about 3-4 seconds. You can add it back if you want it run everytime.
+
 
 <p align="center">
   <img src="http://fbrctr.github.io/assets/toolkit/images/logo.svg" width="500">
