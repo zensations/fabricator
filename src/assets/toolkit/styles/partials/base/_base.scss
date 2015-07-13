@@ -1,3 +1,387 @@
-.test {
-  //@include button();
+.base {
+  @extend .base--TEXT;
+  @extend .base--FORM;
+}
+
+.base--p {
+  margin-bottom: 1rem;
+}
+
+.base--a {
+  @include link;
+}
+
+.base--h1 {
+  font-family: sans-serif;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: normal;
+  margin: {
+    top: 0.375rem;
+    bottom: 2.25rem;
+  }
+}
+
+.base--h2 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+  margin: {
+    top: 1.6875rem;
+    bottom: 0.0625rem;
+  }
+}
+
+.base--h3, .base--h4 {
+  font-weight: bold;
+}
+
+.base--strong, .base--b {
+  font-weight: bold;
+}
+
+.base--em {
+  font-style: italic;
+}
+
+.base--cite {
+  @extend .base--em;
+}
+
+.base--i {
+  @extend .base--em;
+}
+
+.base--var {
+  @extend .base--em;
+}
+
+.base--ul {
+  @extend %base--list;
+  list-style-type: none;
+  padding-left: 0;
+
+  li::before {
+    display: inline-block;
+    content: '';
+    border-radius: 0.375rem;
+    height: 0.75rem;
+    width: 0.75rem;
+    margin-right: 0.225rem;
+    background-color: #777;
+  }
+
+  li > p {
+    display: inline;
+  }
+}
+
+.base--ol {
+  @extend %base--list;
+
+  padding-left: 1.5rem;
+  list-style-type: decimal;
+}
+
+.base--dl {
+  @extend %base--list;
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-left: 1rem;
+  }
+}
+
+.base--hr {
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid #777;
+  display: block;
+  margin: {
+    top: 0.5rem;
+    bottom: 1rem;
+  }
+
+}
+
+.base--small {
+  color: #666;
+  font-size: 0.75rem;
+}
+
+.base--sub {
+  font-size: smaller;
+  line-height: .9rem;
+  vertical-align: sub;
+}
+
+.base--sup {
+  @extend .base--sub;
+  vertical-align: super;
+}
+
+.base--mark {
+  background-color: #f9da5c;
+  padding: {
+    left: 0.125rem;
+    right: 0.125rem;
+  }
+}
+
+.base--ins {
+  @extend .base--mark;
+
+  background-color: #e9e9e9;
+}
+
+.base--del {
+  text-decoration: line-through;
+}
+
+.base--s {
+  @extend .base--del;
+}
+
+.base--blockquote {
+  &::before {
+    content: open-quote;
+  }
+
+  &::after {
+    content: close-quote;
+  }
+}
+
+.base--q {
+  @extend .base--blockquote;
+}
+
+.base--article {
+  padding-bottom: 2.25rem;
+}
+
+//Todo: do it by reset?
+.base--figure {
+  margin: 0;
+}
+
+.base--figcaption {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #444;
+}
+
+.base--code {
+  font-family: 'DejaVu Sans Mono', Inconsolata, Consolas, 'Lucida Console', monospace;
+  color: #444;
+}
+
+.base--samp {
+  @extend .base--code;
+
+  color: inherit;
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+}
+
+.base--abbr {
+  color: #666;
+  font-size: 0.875rem;
+
+  &[title] {
+    border-bottom: 1px dotted rgba(black, 0.25);
+    cursor: help;
+  }
+}
+
+.base--dfn {
+  &[title] {
+    @extend .base--abbr[title];
+  }
+}
+
+.base--kbd {
+  color: #666;
+  font-family: inherit;
+  font-size: .75rem;
+  background-color: #f9f9f9;
+  margin: 0 0.25rem;
+  border: 1px solid #e9e9e9;
+  border-radius: 4px;
+  padding: .25rem .5rem;
+  box-shadow: inset 0 1px 0 #fff;
+}
+
+.base--pre {
+  @extend %base--block;
+
+  margin-left: 1.5rem;
+  white-space: pre-wrap;
+}
+
+.base--details {
+  @extend %base--block;
+}
+
+.base--table {
+  @extend %base--block;
+
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  caption {
+    caption-side: bottom;
+    color: #999;
+    text-align: left;
+    font-size: .75rem;
+    line-height: 1.25rem;
+    margin: {
+      top: .5rem;
+      bottom: .5rem;
+    }
+  }
+
+  td, th {
+    text-align: left;
+    border-bottom: 1px solid #e9e9e9;
+    padding: .5rem 1rem .5rem 0;
+    vertical-align: top;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  thead th {
+    border-bottom: 2px solid #ddd;
+  }
+}
+
+.base--TEXT {
+  $elements: p, a, h1, h2, h3, h4, b, strong, em, cite, i, var, ul, ol, dl, hr, small, sub, sup, mark, ins, del, s,
+  blockquote, q, article, figure, figcaption, code, samp, abbr, dfn, kbd, pre, details, table;
+
+  @each $element in $elements {
+    #{$element} {
+      @extend .base--#{$element} !optional;
+    }
+  }
+}
+
+.base--label {
+
+}
+
+.base--button {
+  @include button;
+}
+
+.base--color-input {
+  @extend %input;
+}
+
+.base--date-input {
+  @extend %input;
+}
+
+.base--datetime-input {
+  @extend %input;
+}
+
+.base--datetime-local-input {
+  @extend %input;
+}
+
+.base--email-input {
+  @extend %input;
+}
+
+.base--file-input {
+  @extend %input;
+  border: none;
+  padding: 0;
+}
+
+.base--month-input {
+  @extend %input;
+}
+
+.base--number-input {
+  @extend %input;
+}
+
+.base--password-input {
+  @extend %input;
+}
+
+.base--range-input {
+  @extend %input;
+}
+
+.base--reset-input {
+  @include button;
+}
+
+.base--search-input {
+  @extend %input;
+}
+
+.base--submit-input {
+  @include button;
+}
+
+.base--tel-input {
+  @extend %input;
+}
+
+.base--text-input {
+  @extend %input;
+}
+
+.base--time-input {
+  @extend %input;
+}
+
+.base--url-input {
+  @extend %input;
+}
+
+.base--week-input {
+  @extend %input;
+}
+
+.base--textarea {
+  @extend %input;
+}
+
+.base--select {
+  @extend %input;
+
+  cursor: pointer;
+}
+
+.base--fieldset {
+  @extend %base--block;
+}
+
+$form-elements: label, button, select, textarea;
+$input-elements: color, date, datetime, datetime-local, email, file, month, number,
+password, range, reset, search, submit, tel, text, time, url, week;
+
+.base--FORM {
+  @each $element in $form-elements {
+    #{$element} {
+      @extend .base--#{$element} !optional;
+    }
+  }
+
+  @each $type in $input-elements {
+    input[type="#{$type}"] {
+      @extend .base--#{$type}-input !optional;
+    }
+  }
 }

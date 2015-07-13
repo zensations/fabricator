@@ -15,6 +15,9 @@ var reload = browserSync.reload;
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
 var webpack = require('webpack');
+var iconfont = require('gulp-iconfont');
+var consolidate = require('gulp-consolidate');
+
 
 
 // configuration
@@ -30,6 +33,7 @@ var config = {
 			toolkit: 'src/assets/toolkit/styles/toolkit_styles.scss'
 		},
 		images: 'src/assets/toolkit/images/**/*',
+		fonts: 'src/assets/toolkit/fonts/**/*',
 		views: 'src/toolkit/views/*.html'
 	},
 	dest: 'dist'
@@ -58,7 +62,7 @@ gulp.task('styles:fabricator', function () {
 		.pipe(gulpif(config.dev, reload({stream:true})));
 });
 
-gulp.task('styles:toolkit', function () {
+gulp.task('styles:toolkit', ['icons'], function () {
 	gulp.src(config.src.styles.toolkit)
 		.pipe(sass().on('error', sass.logError))
 		.pipe(prefix('last 1 version'))
@@ -87,6 +91,28 @@ gulp.task('scripts', function (done) {
 	});
 });
 
+// icons
+gulp.task('icons', function(){
+	return gulp.src(['src/assets/toolkit/icons/vectors/*.svg'])
+		.pipe(iconfont({ fontName: 'icons', normalize: true }))
+		.on('glyphs', function(glyphs, options) {
+			gulp.src(['src/assets/toolkit/icons/_icons.scss'])
+				.pipe(consolidate('lodash', {
+					glyphs: glyphs,
+					name: 'icons',
+					path: '../fonts/'
+				}))
+				.pipe(gulp.dest('src/assets/toolkit/styles/partials/global'));
+			console.log('codepoints run');
+		})
+		.pipe(gulp.dest(config.dest + '/assets/toolkit/fonts'));
+});
+
+// fonts
+gulp.task('fonts', function () {
+	return gulp.src(config.src.fonts)
+		.pipe(gulp.dest(config.dest + '/assets/toolkit/fonts'));
+});
 
 // images
 gulp.task('images', ['favicon'], function () {
@@ -143,6 +169,9 @@ gulp.task('serve', function () {
 	gulp.task('assemble:watch', ['assemble'], reload);
 	gulp.watch('src/**/*.{html,md,json,yml}', ['assemble:watch']);
 
+	gulp.watch(['src/assets/toolkit/icons/vectors/**/*.svg', ['src/toolkit/icons/_icons.scss']], ['icons']);
+	gulp.watch('src/assets/toolkit/icons/**/*', ['fonts']);
+
 	gulp.task('styles:fabricator:watch', ['styles:fabricator']);
 	gulp.watch('src/assets/fabricator/styles/**/*.scss', ['styles:fabricator:watch']);
 
@@ -163,9 +192,11 @@ gulp.task('default', ['clean'], function () {
 
 	// define build tasks
 	var tasks = [
+		'icons',
 		'styles',
 		'scripts',
 		'images',
+		'fonts',
 		'assemble'
 	];
 

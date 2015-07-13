@@ -10,3 +10,37 @@
     @content;
   }
 }
+
+
+// Taken from @snugug toolkit library
+// https://github.com/at-import/toolkit/blob/2.x.x/stylesheets/toolkit/_placeholders.scss
+$Private-Toolkit-Placeholders: (
+);
+
+//////////////////////////////
+// Placeholder Get/Set
+//////////////////////////////
+@function toolkit-placeholder-set($id) {
+  $unique-id: unique-id();
+  $Private-Toolkit-Placeholders: map-merge($Private-Toolkit-Placeholders, ($id: $unique-id)) !global;
+  @return $unique-id;
+}
+
+@function toolkit-placeholder-get($id) {
+  @return map-get($Private-Toolkit-Placeholders, $id);
+}
+
+//////////////////////////////
+// Generate Placeholder Class and Extend
+//////////////////////////////
+@mixin dynamic-extend($id) {
+  $placeholder-id: toolkit-placeholder-get($id);
+
+  @if $placeholder-id == null {
+    $placeholder-id: toolkit-placeholder-set($id);
+    @at-root %#{$placeholder-id} {
+      @content;
+    }
+  }
+  @extend %#{$placeholder-id};
+}

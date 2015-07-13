@@ -2,13 +2,18 @@
  * Toolkit main file with imports.
  */
 
-// Global defining basic mixins, extends and common used classes
+// Reset + normalize.
+@import 'reset';
+
+// Global defining basic mixins, extends and common used classes.
+@import 'partials/global/variables';
 @import 'partials/global/init';
+@import 'partials/global/icons';
 @import 'partials/global/extends';
 @import 'partials/global/mixins';
 
-// Base styles
+// Base styles.
 @import 'partials/base/base';
 
-// Components
+// Components.
 

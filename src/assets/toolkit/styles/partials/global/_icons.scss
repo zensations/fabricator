@@ -1,0 +1,53 @@
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: "icons";
+  src: url('../fonts/icons.eot');
+  src: url('../fonts/icons.eot?#iefix') format('eot'),
+       url('../fonts/icons.woff') format('woff'),
+       url('../fonts/icons.ttf') format('truetype'),
+       url('../fonts/icons.svg#icons') format('svg');
+}
+
+$icons: (
+  bars: "\EA01",
+  camera: "\EA02",
+  chevron-right: "\EA03",
+  chevron-up: "\EA04",
+  comment: "\EA05",
+  ellipsis-h: "\EA06",
+  envelope: "\EA07",
+  facebook: "\EA08",
+  google-plus: "\EA09",
+  home: "\EA0A",
+  linkedin: "\EA0B",
+  minus: "\EA0C",
+  plus: "\EA0D",
+  search: "\EA0E",
+  times: "\EA0F",
+  twitter: "\EA10",
+  user: "\EA11",
+  video-camera: "\EA12",
+);
+
+@function icon($icon) {
+  @return map-get($icons, $icon);
+}
+
+@mixin icon($icon: false, $extend: true) {
+  @include static('icon', $extend) {
+    @include font-smoothing;
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  @if $icon {
+    @include static('icon--#{to-upper-case($icon)}', $extend) {
+      content: icon($icon);
+    }
+  }
+}

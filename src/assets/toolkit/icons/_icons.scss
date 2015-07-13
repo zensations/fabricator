@@ -1,0 +1,36 @@
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: "<%= name %>";
+  src: url('<%= path %><%= name %>.eot');
+  src: url('<%= path %><%= name %>.eot?#iefix') format('eot'),
+       url('<%= path %><%= name %>.woff') format('woff'),
+       url('<%= path %><%= name %>.ttf') format('truetype'),
+       url('<%= path %><%= name %>.svg#icons') format('svg');
+}
+
+$icons: (
+<% _.each(glyphs, function(glyph) { %>  <%= glyph.name %>: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>",
+<% }); %>);
+
+@function icon($icon) {
+  @return map-get($icons, $icon);
+}
+
+@mixin icon($icon: false, $extend: true) {
+  @include static('icon', $extend) {
+    @include font-smoothing;
+    font-family: "<%= name %>";
+    font-style: normal;
+    font-weight: normal;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  @if $icon {
+    @include static('icon--#{to-upper-case($icon)}', $extend) {
+      content: icon($icon);
+    }
+  }
+}
