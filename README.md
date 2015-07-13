@@ -3,6 +3,8 @@
 Difference to the original fabricator:
 - Icon font generator out of .svg files (now using fontawesome but can be replaced by any .svg icons)
 - Partials basic setup and structure with some mixins / extends
+- Added a base component under materials and corresponding .scss for base tags h1, p, etc.
+- Added DRY SCSS mixins based on https://github.com/Snugug/toolkit
 
 
 <p align="center">
