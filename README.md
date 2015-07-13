@@ -15,13 +15,6 @@ Difference to the original fabricator:
 
 Fabricator is a tool for building website UI toolkits - _think ["Tiny Bootstraps, for Every Client"](http://daverupert.com/2013/04/responsive-deliverables/#tiny-bootstraps-for-every-client)_
 
-## Quick Start
-
-```shell
-$ curl -L https://github.com/fbrctr/fabricator/archive/master.tar.gz | tar zx --strip 1
-$ npm start
-```
-
 ## Documentation
 
 #### [Read the docs →](http://fbrctr.github.io/docs)
